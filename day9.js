@@ -157,15 +157,55 @@
 // Notes
 // Notice that num is also included in the returned list.
 
-function list_of_multiples (num , length){
-    let arrFinal = [];
-    for (let i = 1; i <= length; i++) {
-        const arr = num * i;
-        arrFinal.push(arr);
-    }
-    return arrFinal;
-    
-}
-console.log(list_of_multiples(7, 5) , [7, 14, 21, 28, 35]);
-console.log(list_of_multiples(12, 10) , [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]);
-console.log(list_of_multiples(17, 6) , [17, 34, 51, 68, 85, 102]);
+// function list_of_multiples (num , length){
+    // let arrFinal = [];
+    // for (let i = 1; i <= length; i++) {
+        // const arr = num * i;
+        // arrFinal.push(arr);
+    // }
+    // return arrFinal;
+    // 
+// }
+// console.log(list_of_multiples(7, 5) , [7, 14, 21, 28, 35]);
+// console.log(list_of_multiples(12, 10) , [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]);
+// console.log(list_of_multiples(17, 6) , [17, 34, 51, 68, 85, 102]);
+
+// This challenge will help you interpret mathematical relationships both algebraically and geometrically.
+
+// Matchstick Houses, Steps 1, 2 and 3
+
+// Create a function that takes a number (step) as an argument and returns the number of matchsticks in that step. See step 1, 2 and 3 in the image above.
+
+// Examples
+
+// function matchHouses (step){
+//     return step * 6 - (step - 1) ;
+// }
+// console.log(matchHouses(1) , 6);
+// console.log(matchHouses(2) , 11);
+
+// console.log(matchHouses(4) , 21);
+
+// console.log(matchHouses(87) , 436);
+
+// 18 => Find The Largest Even Number
+// Write a function that finds the largest even number in a list. Return -1 if not found. The use of built-in functions max() and sorted() are prohibited.
+
+// Examples
+// function largest_even(arr) {
+//     let num = -1;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 == 0) {
+//         if(arr[i] > num){
+//             num = arr[i];
+//         }
+//     }
+//   }
+//   return num;
+// }
+// console.log(largest_even([3, 7, 2, 1, 7, 9, 10, 13]), 10);
+
+// console.log(largest_even([1, 3, 5, 7]), -1);
+
+// console.log(largest_even([0, 19, 18973623]), 0);
+
