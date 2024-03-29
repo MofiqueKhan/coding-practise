@@ -71,10 +71,10 @@ function recursiveFibonacci(n) {
   return recursiveFibonacci(n - 2) + recursiveFibonacci(n - 1);
 }
 
-console.log(recursiveFibonacci(6), 8);
-console.log(recursiveFibonacci(2), 1);
-console.log(recursiveFibonacci(10), 55);
-console.log(recursiveFibonacci(20), 6765);
+// console.log(recursiveFibonacci(6), 8);
+// console.log(recursiveFibonacci(2), 1);
+// console.log(recursiveFibonacci(10), 55);
+// console.log(recursiveFibonacci(20), 6765);
 
 // Initially, the function recursiveFibonacci(6) is called.
 
@@ -126,3 +126,39 @@ console.log(recursiveFibonacci(20), 6765);
 
 // Which we know is 3 + 5 = 8.
 // So, the output of recursiveFibonacci(6) is indeed 8, as expected.
+
+// 14 => Sum of List Elements Except Itself
+// A list is given. Return a new list having the sum of all its elements except itself. For more clarity, check the examples below.
+
+// Clarification
+// [1, 2, 3, 4] = for first element => sum will be 2+3+4 = [9]
+// [1, 2, 3, 4] = for second element => sum will be 1+3+4 = [9, 8]
+// [1, 2, 3, 4] = for third element => sum will be 1+2+4 = [9, 8, 7]
+// [1, 2, 3, 4] = for fourth element => sum will be 1+2+3 = [9, 8, 7, 6]
+
+// Examples
+
+function lst_ele_sum(arr) {
+  let finalArr = [];
+  let sum;
+  for (let i = 0; i < arr.length; i++) {
+    sum = 0;
+
+    for (let j = 0; j < arr.length; j++) {
+      if (j !== i) {
+        sum += arr[j];
+      }
+    }
+    finalArr.push(sum);
+  }
+  return finalArr;
+}
+
+console.log(lst_ele_sum([1, 2, 3, 2, 1]), [8, 7, 6, 7, 8]);
+console.log(lst_ele_sum([1, 2]), [2, 1]);
+console.log(lst_ele_sum([1, 2, 3]), [5, 4, 3]);
+console.log(lst_ele_sum([1, 2, 3, 4, 5]), [14, 13, 12, 11, 10]);
+console.log(
+  lst_ele_sum([10, 20, 30, 40, 50, 60]),
+  [200, 190, 180, 170, 160, 150]
+);
