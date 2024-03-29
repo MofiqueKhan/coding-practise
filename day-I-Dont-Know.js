@@ -154,11 +154,74 @@ function lst_ele_sum(arr) {
   return finalArr;
 }
 
-console.log(lst_ele_sum([1, 2, 3, 2, 1]), [8, 7, 6, 7, 8]);
-console.log(lst_ele_sum([1, 2]), [2, 1]);
-console.log(lst_ele_sum([1, 2, 3]), [5, 4, 3]);
-console.log(lst_ele_sum([1, 2, 3, 4, 5]), [14, 13, 12, 11, 10]);
-console.log(
-  lst_ele_sum([10, 20, 30, 40, 50, 60]),
-  [200, 190, 180, 170, 160, 150]
-);
+// console.log(lst_ele_sum([1, 2, 3, 2, 1]), [8, 7, 6, 7, 8]);
+// console.log(lst_ele_sum([1, 2]), [2, 1]);
+// console.log(lst_ele_sum([1, 2, 3]), [5, 4, 3]);
+// console.log(lst_ele_sum([1, 2, 3, 4, 5]), [14, 13, 12, 11, 10]);
+// console.log(
+//   lst_ele_sum([10, 20, 30, 40, 50, 60]),
+//   [200, 190, 180, 170, 160, 150]
+// );
+
+// 15 => Missing Letters
+// Given a string containing unique letters, return a sorted string with the letters that don't appear in the string.
+
+// Examples
+
+function get_missing_letters(str){
+  let missingStr = "";
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  for(let i = 0 ; i < alphabet.length ; i++){
+    if(!str.includes(alphabet[i])){
+      missingStr += alphabet[i];
+    }
+  }
+  return missingStr;
+}
+// console.log(get_missing_letters("abcdefgpqrstuvwxyz") , "hijklmno");
+
+// console.log(get_missing_letters("zyxwvutsrq") , "abcdefghijklmnop");
+
+// console.log(get_missing_letters("abc") , "defghijklmnopqrstuvwxyz");
+
+// console.log(get_missing_letters("abcdefghijklmnopqrstuvwxyz") , "");
+
+// Notes
+// The combination of both strings should be 26 elements long, including all the letters in the alphabet.
+// Letters will all be in lowercase.
+
+// 16 => Censor Words Longer Than Four Characters
+// Create a function that takes a string and censors words over four characters with *.
+
+// Examples
+
+
+function censor(str){
+  let words = str.split(" ");
+  let finalStr = "";
+
+  for(let i = 0 ; i < words.length ; i++){
+    if(words[i].length > 4){
+      let censorWord = "";
+      for(let j = 0 ; j < words[i].length; j++){
+        censorWord += "*";
+      }
+      finalStr += censorWord + " "
+    }
+    else{
+      finalStr += words[i] + " "
+    }
+  }
+  return finalStr;
+}
+// console.log(censor("The code is fourty") , "The code is ******");
+
+// console.log(censor("Two plus three is five") , "Two plus ***** is five");
+
+// console.log(censor("aaaa aaaaa 1234 12345") , "aaaa ***** 1234 *****");
+
+// Notes
+// Don't censor words with exactly four characters.
+// If all words have four characters or less, return the original string.
+// The amount of * is the same as the length of the word.
