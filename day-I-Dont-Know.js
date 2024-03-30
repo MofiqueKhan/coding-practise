@@ -225,3 +225,70 @@ function censor(str){
 // Don't censor words with exactly four characters.
 // If all words have four characters or less, return the original string.
 // The amount of * is the same as the length of the word.
+
+
+// 17 => Accumulating List
+// Create a function that takes in a list and returns a list of the accumulating sum.
+
+// Examples
+// accumulating_list([1, 2, 3, 4]) , [1, 3, 6, 10]
+// # [1, 3, 6, 10] can be written as  [1, 1 + 2, 1 + 2 + 3, 1 + 2 + 3 + 4]
+
+function accumulating_list(arr){ 
+  let finalArr = [];
+  let sum = 0;
+  for(let i = 0 ; i < arr.length ; i++){
+    sum += arr[i]
+    finalArr.push(sum);
+  }
+  return finalArr;
+}
+// console.log(accumulating_list([1, 5, 7]) , [1, 6, 13]);
+
+// console.log(accumulating_list([1, 0, 1, 0, 1]) , [1, 1, 2, 2, 3]);
+
+// console.log(accumulating_list([]) , []);
+
+// Notes
+// An empty list input [] should return an empty list [].  
+
+// 18 => Find The Largest Even Number
+// Write a function that finds the largest even number in a list. Return -1 if not found. The use of built-in functions max() and sorted() are prohibited.
+
+// Examples
+function largest_even(arr) {
+  let ans = -1;
+  for(let i = 0 ; i < arr.length; i++){
+    if(arr[i] % 2 === 0 && arr[i] > ans){
+      ans  =  arr[i]
+    }
+  }
+  return ans ;
+}
+
+// console.log(largest_even([3, 7, 2, 1, 7, 9, 10, 13]) , 10);
+
+// console.log(largest_even([1, 3, 5, 7]) , -1);
+
+// console.log(largest_even([0, 19, 18973623]) , 0);
+
+  // 19 => Basic Statistics: Median
+  // The median of a group of numbers is the middle number when the group is sorted. If the size of the group is even, the median is the average of the middle two numbers. Given a sorted list of numbers, return the median (rounded to one decimal place if the median isn't an integer).
+
+  // Examples
+  function median(arr){
+    let median = 0;
+    let midIndex = Math.floor(arr.length / 2 );
+    
+      if(arr.length % 2 === 0){
+       return median = (arr[midIndex - 1] + arr[midIndex]) / 2;
+      }
+      else{
+        return median = arr[midIndex];
+      }
+    }
+  
+  
+  console.log(median([1, 2, 4, 5, 6, 8, 8, 8, 10]) , 6);
+  console.log(median([2, 2, 6, 8, 8, 10, 10]) , 8);
+  console.log(median([1, 2, 2, 4, 7, 8, 9, 10]) , 5.5);
