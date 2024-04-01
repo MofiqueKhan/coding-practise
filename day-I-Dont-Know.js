@@ -289,6 +289,35 @@ function largest_even(arr) {
     }
   
   
-  console.log(median([1, 2, 4, 5, 6, 8, 8, 8, 10]) , 6);
-  console.log(median([2, 2, 6, 8, 8, 10, 10]) , 8);
-  console.log(median([1, 2, 2, 4, 7, 8, 9, 10]) , 5.5);
+  // console.log(median([1, 2, 4, 5, 6, 8, 8, 8, 10]) , 6);
+  // console.log(median([2, 2, 6, 8, 8, 10, 10]) , 8);
+  // console.log(median([1, 2, 2, 4, 7, 8, 9, 10]) , 5.5);
+
+//   20 => Return Duplicate Numbers
+// Given a list nums where each integer is between 1 and 100, return a sorted list containing only duplicate numbers from the given nums list.
+
+// Examples
+function duplicate_nums(arr){
+  let finalArr = [];
+  let visited = {};
+
+  for(let i = 0 ; i < arr.length ; i++){
+    if(visited[arr[i]]){
+      if(visited[arr[i]]=== 1){
+        finalArr.push(arr[i])
+      }
+      visited[arr[i]] += 1;
+    }
+    else{
+      visited[arr[i]] = 1;
+    }
+  }
+  return finalArr.length > 0 ? finalArr.sort((a,b) => a - b):"None";
+}
+console.log(duplicate_nums([1, 2, 3, 4, 3, 5, 6]) , [3]);
+console.log(duplicate_nums([81, 72, 43, 72, 81, 99, 99, 100, 12, 54]) , [72, 81, 99]);
+console.log(duplicate_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) , "None");
+
+// Notes
+// The given list won't contain the same number three times.
+// If there are no duplicate numbers, return None.
