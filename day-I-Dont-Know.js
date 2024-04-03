@@ -379,17 +379,17 @@ const target1 = 9;
 // Given the after-tax income as ati, what you are supposed to do is to make a function that will return an object that shows how much a person needs to spend on needs, wants, and savings.
 
 
-function fiftyThirtyTwenty(ati){
-  let strategy = {};
-  strategy.Needs = 50/100 * ati;
-  strategy.Wants = 30/100 * ati;
-  strategy.Savings = 20/100 * ati;
-  return strategy;
-}
+// function fiftyThirtyTwenty(ati){
+//   let strategy = {};
+//   strategy.Needs = 50/100 * ati;
+//   strategy.Wants = 30/100 * ati;
+//   strategy.Savings = 20/100 * ati;
+//   return strategy;
+// }
 
-console.log(fiftyThirtyTwenty(10000) , { "Needs": 5000, "Wants": 3000, "Savings": 2000 });
-console.log(fiftyThirtyTwenty(50000) , { "Needs": 25000, "Wants": 15000, "Savings": 10000 });
-console.log(fiftyThirtyTwenty(13450) , { "Needs": 6725, "Wants": 4035, "Savings": 2690 });
+// console.log(fiftyThirtyTwenty(10000) , { "Needs": 5000, "Wants": 3000, "Savings": 2000 });
+// console.log(fiftyThirtyTwenty(50000) , { "Needs": 25000, "Wants": 15000, "Savings": 10000 });
+// console.log(fiftyThirtyTwenty(13450) , { "Needs": 6725, "Wants": 4035, "Savings": 2690 });
 
 
 function fiftyThirtyTwenty(ati) {
