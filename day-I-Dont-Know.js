@@ -314,9 +314,9 @@ function duplicate_nums(arr){
   }
   return finalArr.length > 0 ? finalArr.sort((a,b) => a - b):"None";
 }
-console.log(duplicate_nums([1, 2, 3, 4, 3, 5, 6]) , [3]);
-console.log(duplicate_nums([81, 72, 43, 72, 81, 99, 99, 100, 12, 54]) , [72, 81, 99]);
-console.log(duplicate_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) , "None");
+// console.log(duplicate_nums([1, 2, 3, 4, 3, 5, 6]) , [3]);
+// console.log(duplicate_nums([81, 72, 43, 72, 81, 99, 99, 100, 12, 54]) , [72, 81, 99]);
+// console.log(duplicate_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) , "None");
 
 // Notes
 // The given list won't contain the same number three times.
@@ -371,4 +371,39 @@ function twoSum(nums, target) {
 // Example usage:
 const nums1 = [2, 7, 11, 15];
 const target1 = 9;
-console.log(twoSum(nums1, target1));  // Output: [0, 1]
+// console.log(twoSum(nums1, target1));  // Output: [0, 1]
+
+
+// The 50-30-20 strategy is a simple way to budget, which involves spending 50% of after-tax income on needs, 30% after tax income on wants, and 20% after-tax income on savings or paying off debt.
+
+// Given the after-tax income as ati, what you are supposed to do is to make a function that will return an object that shows how much a person needs to spend on needs, wants, and savings.
+
+
+function fiftyThirtyTwenty(ati){
+  let strategy = {};
+  strategy.Needs = 50/100 * ati;
+  strategy.Wants = 30/100 * ati;
+  strategy.Savings = 20/100 * ati;
+  return strategy;
+}
+
+console.log(fiftyThirtyTwenty(10000) , { "Needs": 5000, "Wants": 3000, "Savings": 2000 });
+console.log(fiftyThirtyTwenty(50000) , { "Needs": 25000, "Wants": 15000, "Savings": 10000 });
+console.log(fiftyThirtyTwenty(13450) , { "Needs": 6725, "Wants": 4035, "Savings": 2690 });
+
+
+function fiftyThirtyTwenty(ati) {
+  const needs = ati * 0.5;
+  const wants = ati * 0.3;
+  const savings = ati * 0.2;
+
+  return {
+      "Needs": needs,
+      "Wants": wants,
+      "Savings": savings
+  };
+}
+
+console.log(fiftyThirtyTwenty(10000), { "Needs": 5000, "Wants": 3000, "Savings": 2000 });
+console.log(fiftyThirtyTwenty(50000), { "Needs": 25000, "Wants": 15000, "Savings": 10000 });
+console.log(fiftyThirtyTwenty(13450), { "Needs": 6725, "Wants": 4035, "Savings": 2690 });
