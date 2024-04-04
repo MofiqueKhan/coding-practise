@@ -404,6 +404,34 @@ function fiftyThirtyTwenty(ati) {
   };
 }
 
-console.log(fiftyThirtyTwenty(10000), { "Needs": 5000, "Wants": 3000, "Savings": 2000 });
-console.log(fiftyThirtyTwenty(50000), { "Needs": 25000, "Wants": 15000, "Savings": 10000 });
-console.log(fiftyThirtyTwenty(13450), { "Needs": 6725, "Wants": 4035, "Savings": 2690 });
+// console.log(fiftyThirtyTwenty(10000), { "Needs": 5000, "Wants": 3000, "Savings": 2000 });
+// console.log(fiftyThirtyTwenty(50000), { "Needs": 25000, "Wants": 15000, "Savings": 10000 });
+// console.log(fiftyThirtyTwenty(13450), { "Needs": 6725, "Wants": 4035, "Savings": 2690 });
+
+// Given two arrays, which represent two sandwiches, return whether both sandwiches use the same type of bread. The bread will always be found at the start and end of the array.
+
+// Examples
+
+function hasSameBread(arr1 , arr2){
+  if(arr1.length < 2 || arr2.length < 2){
+    return false; 
+  }
+  
+    return arr1[0] === arr2[0] && arr1[arr1.length-1] === arr2[arr2.length-1];
+
+}
+
+console.log(hasSameBread(
+  ["white bread", "lettuce", "white bread"],
+  ["white bread", "tomato", "white bread"]
+) , true);
+
+console.log(hasSameBread(
+  ["brown bread", "chicken", "brown bread"],
+  ["white bread", "chicken", "white bread"]
+) , false);
+
+console.log(hasSameBread(
+  ["toast", "cheese", "toast"],
+  ["brown bread", "cheese", "toast"]
+) , false);
