@@ -421,17 +421,35 @@ function hasSameBread(arr1 , arr2){
 
 }
 
-console.log(hasSameBread(
-  ["white bread", "lettuce", "white bread"],
-  ["white bread", "tomato", "white bread"]
-) , true);
+// console.log(hasSameBread(
+//   ["white bread", "lettuce", "white bread"],
+//   ["white bread", "tomato", "white bread"]
+// ) , true);
 
-console.log(hasSameBread(
-  ["brown bread", "chicken", "brown bread"],
-  ["white bread", "chicken", "white bread"]
-) , false);
+// console.log(hasSameBread(
+//   ["brown bread", "chicken", "brown bread"],
+//   ["white bread", "chicken", "white bread"]
+// ) , false);
 
-console.log(hasSameBread(
-  ["toast", "cheese", "toast"],
-  ["brown bread", "cheese", "toast"]
-) , false);
+// console.log(hasSameBread(
+//   ["toast", "cheese", "toast"],
+//   ["brown bread", "cheese", "toast"]
+// ) , false);
+
+// Create a function which returns the number of true values there are in an array.
+
+// Examples
+function countTrue(arr){
+  let count = 0;
+  for(let i = 0 ; i < arr.length ; i++){
+    if(arr[i] === true){
+      count++;
+    }
+  }
+  return count;z
+}
+console.log(countTrue([true, false, false, true, false]) , 2);
+
+console.log(countTrue([false, false, false, false]) , 0);
+
+console.log(countTrue([]) , 0);
