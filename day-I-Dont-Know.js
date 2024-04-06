@@ -446,10 +446,37 @@ function countTrue(arr){
       count++;
     }
   }
-  return count;z
+  return count;
 }
-console.log(countTrue([true, false, false, true, false]) , 2);
+// console.log(countTrue([true, false, false, true, false]) , 2);
 
-console.log(countTrue([false, false, false, false]) , 0);
+// console.log(countTrue([false, false, false, false]) , 0);
 
-console.log(countTrue([]) , 0);
+// console.log(countTrue([]) , 0);
+
+// Create a function that takes a number and return an array of three numbers: half of the number, quarter of the number and an eighth of the number.
+
+// Examples
+
+// function halfQuarterEighth(num){
+//   let arr = [];
+//  arr.push(num/2 , num/4 , num/8);
+//  return arr;
+// }
+// console.log(halfQuarterEighth(6) , [3, 1.5, 0.75]);
+
+// console.log(halfQuarterEighth(22) , [11, 5.5, 2.75]);
+
+// console.log(halfQuarterEighth(25) , [12.5, 6.25, 3.125]);
+
+function halfQuarterEighth(num) {
+  const half = num / 2;
+  const quarter = num / 4;
+  const eighth = num / 8;
+
+  return [half, quarter, eighth];
+}
+
+console.log(halfQuarterEighth(6));  
+console.log(halfQuarterEighth(22)); 
+console.log(halfQuarterEighth(25)); 
