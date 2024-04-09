@@ -489,11 +489,39 @@ function halfQuarterEighth(num) {
 function rotateByOne(arr){
    let lastElemnt = arr.pop();
    arr.unshift(lastElemnt);
-   return arr;
+   return arr; 
 }
-console.log(rotateByOne([1, 2, 3, 4, 5]) , [5, 1, 2, 3, 4]);
+// console.log(rotateByOne([1, 2, 3, 4, 5]) , [5, 1, 2, 3, 4]);
 
-console.log(rotateByOne([6, 5, 8, 9, 7]) , [7, 6, 5, 8, 9]);
+// console.log(rotateByOne([6, 5, 8, 9, 7]) , [7, 6, 5, 8, 9]);
 
-console.log(rotateByOne([20, 15, 26, 8, 4]) , [4, 20, 15, 26, 8]);
+// console.log(rotateByOne([20, 15, 26, 8, 4]) , [4, 20, 15, 26, 8]);
+
+// Create a function that takes a whole number as input and returns the shape with that number's amount of sides. Here are the expected outputs to get from these inputs.
+
+// Inputs	Outputs
+// 1	"circle"
+// 2	"semi-circle"
+// 3	"triangle"
+// 4	"square"
+// 5	"pentagon"
+// 6	"hexagon"
+// 7	"heptagon"
+// 8	"octagon"
+// 9	"nonagon"
+// 10	"decagon"
+// Examples
+function nSidedShape(n){
+  const shapes = ["circle", "semi-circle", "triangle", "square", "pentagon", "hexagon", "heptagon", "octagon", "nonagon", "decagon"];
+  return shapes[n-1];
+}
+console.log(nSidedShape(3) , "triangle");
+
+console.log(nSidedShape(1) , "circle");
+
+console.log(nSidedShape(9) , "nonagon");
+// Notes
+// There won't be any tests with a number below 1 or greater than 10.
+// Return the output in lowercase.
+// The challenge is intended to be completed without conditionals (it would take too long)!
 
