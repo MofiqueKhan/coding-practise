@@ -515,13 +515,24 @@ function nSidedShape(n){
   const shapes = ["circle", "semi-circle", "triangle", "square", "pentagon", "hexagon", "heptagon", "octagon", "nonagon", "decagon"];
   return shapes[n-1];
 }
-console.log(nSidedShape(3) , "triangle");
+// console.log(nSidedShape(3) , "triangle");
 
-console.log(nSidedShape(1) , "circle");
+// console.log(nSidedShape(1) , "circle");
 
-console.log(nSidedShape(9) , "nonagon");
+// console.log(nSidedShape(9) , "nonagon");
 // Notes
 // There won't be any tests with a number below 1 or greater than 10.
 // Return the output in lowercase.
 // The challenge is intended to be completed without conditionals (it would take too long)!
 
+// Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+
+// Examples
+function addition(n){
+  return n++;
+}
+console.log(addition(0) , 1);
+
+console.log(addition(9) , 10);
+
+console.log(addition(-3) , -2);
