@@ -168,12 +168,12 @@ function lst_ele_sum(arr) {
 
 // Examples
 
-function get_missing_letters(str){
+function get_missing_letters(str) {
   let missingStr = "";
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-  for(let i = 0 ; i < alphabet.length ; i++){
-    if(!str.includes(alphabet[i])){
+  for (let i = 0; i < alphabet.length; i++) {
+    if (!str.includes(alphabet[i])) {
       missingStr += alphabet[i];
     }
   }
@@ -196,21 +196,19 @@ function get_missing_letters(str){
 
 // Examples
 
-
-function censor(str){
+function censor(str) {
   let words = str.split(" ");
   let finalStr = "";
 
-  for(let i = 0 ; i < words.length ; i++){
-    if(words[i].length > 4){
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > 4) {
       let censorWord = "";
-      for(let j = 0 ; j < words[i].length; j++){
+      for (let j = 0; j < words[i].length; j++) {
         censorWord += "*";
       }
-      finalStr += censorWord + " "
-    }
-    else{
-      finalStr += words[i] + " "
+      finalStr += censorWord + " ";
+    } else {
+      finalStr += words[i] + " ";
     }
   }
   return finalStr;
@@ -226,7 +224,6 @@ function censor(str){
 // If all words have four characters or less, return the original string.
 // The amount of * is the same as the length of the word.
 
-
 // 17 => Accumulating List
 // Create a function that takes in a list and returns a list of the accumulating sum.
 
@@ -234,11 +231,11 @@ function censor(str){
 // accumulating_list([1, 2, 3, 4]) , [1, 3, 6, 10]
 // # [1, 3, 6, 10] can be written as  [1, 1 + 2, 1 + 2 + 3, 1 + 2 + 3 + 4]
 
-function accumulating_list(arr){ 
+function accumulating_list(arr) {
   let finalArr = [];
   let sum = 0;
-  for(let i = 0 ; i < arr.length ; i++){
-    sum += arr[i]
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
     finalArr.push(sum);
   }
   return finalArr;
@@ -250,7 +247,7 @@ function accumulating_list(arr){
 // console.log(accumulating_list([]) , []);
 
 // Notes
-// An empty list input [] should return an empty list [].  
+// An empty list input [] should return an empty list [].
 
 // 18 => Find The Largest Even Number
 // Write a function that finds the largest even number in a list. Return -1 if not found. The use of built-in functions max() and sorted() are prohibited.
@@ -258,12 +255,12 @@ function accumulating_list(arr){
 // Examples
 function largest_even(arr) {
   let ans = -1;
-  for(let i = 0 ; i < arr.length; i++){
-    if(arr[i] % 2 === 0 && arr[i] > ans){
-      ans  =  arr[i]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0 && arr[i] > ans) {
+      ans = arr[i];
     }
   }
-  return ans ;
+  return ans;
 }
 
 // console.log(largest_even([3, 7, 2, 1, 7, 9, 10, 13]) , 10);
@@ -272,47 +269,44 @@ function largest_even(arr) {
 
 // console.log(largest_even([0, 19, 18973623]) , 0);
 
-  // 19 => Basic Statistics: Median
-  // The median of a group of numbers is the middle number when the group is sorted. If the size of the group is even, the median is the average of the middle two numbers. Given a sorted list of numbers, return the median (rounded to one decimal place if the median isn't an integer).
+// 19 => Basic Statistics: Median
+// The median of a group of numbers is the middle number when the group is sorted. If the size of the group is even, the median is the average of the middle two numbers. Given a sorted list of numbers, return the median (rounded to one decimal place if the median isn't an integer).
 
-  // Examples
-  function median(arr){
-    let median = 0;
-    let midIndex = Math.floor(arr.length / 2 );
-    
-      if(arr.length % 2 === 0){
-       return median = (arr[midIndex - 1] + arr[midIndex]) / 2;
-      }
-      else{
-        return median = arr[midIndex];
-      }
-    }
-  
-  
-  // console.log(median([1, 2, 4, 5, 6, 8, 8, 8, 10]) , 6);
-  // console.log(median([2, 2, 6, 8, 8, 10, 10]) , 8);
-  // console.log(median([1, 2, 2, 4, 7, 8, 9, 10]) , 5.5);
+// Examples
+function median(arr) {
+  let median = 0;
+  let midIndex = Math.floor(arr.length / 2);
+
+  if (arr.length % 2 === 0) {
+    return (median = (arr[midIndex - 1] + arr[midIndex]) / 2);
+  } else {
+    return (median = arr[midIndex]);
+  }
+}
+
+// console.log(median([1, 2, 4, 5, 6, 8, 8, 8, 10]) , 6);
+// console.log(median([2, 2, 6, 8, 8, 10, 10]) , 8);
+// console.log(median([1, 2, 2, 4, 7, 8, 9, 10]) , 5.5);
 
 //   20 => Return Duplicate Numbers
 // Given a list nums where each integer is between 1 and 100, return a sorted list containing only duplicate numbers from the given nums list.
 
 // Examples
-function duplicate_nums(arr){
+function duplicate_nums(arr) {
   let finalArr = [];
   let visited = {};
 
-  for(let i = 0 ; i < arr.length ; i++){
-    if(visited[arr[i]]){
-      if(visited[arr[i]]=== 1){
-        finalArr.push(arr[i])
+  for (let i = 0; i < arr.length; i++) {
+    if (visited[arr[i]]) {
+      if (visited[arr[i]] === 1) {
+        finalArr.push(arr[i]);
       }
       visited[arr[i]] += 1;
-    }
-    else{
+    } else {
       visited[arr[i]] = 1;
     }
   }
-  return finalArr.length > 0 ? finalArr.sort((a,b) => a - b):"None";
+  return finalArr.length > 0 ? finalArr.sort((a, b) => a - b) : "None";
 }
 // console.log(duplicate_nums([1, 2, 3, 4, 3, 5, 6]) , [3]);
 // console.log(duplicate_nums([81, 72, 43, 72, 81, 99, 99, 100, 12, 54]) , [72, 81, 99]);
@@ -347,23 +341,23 @@ function duplicate_nums(arr){
 function twoSum(nums, target) {
   // Create a map to store the indices of numbers
   const numIndices = new Map();
-  
+
   // Iterate through the array
   for (let i = 0; i < nums.length; i++) {
-      const num = nums[i];
-      // Calculate the complement needed to reach the target
-      const complement = target - num;
-      
-      // Check if the complement is already in the map
-      if (numIndices.has(complement)) {
-          // If found, return the indices of the current number and its complement
-          return [numIndices.get(complement), i];
-      }
-      
-      // Add the current number and its index to the map
-      numIndices.set(num, i);
+    const num = nums[i];
+    // Calculate the complement needed to reach the target
+    const complement = target - num;
+
+    // Check if the complement is already in the map
+    if (numIndices.has(complement)) {
+      // If found, return the indices of the current number and its complement
+      return [numIndices.get(complement), i];
+    }
+
+    // Add the current number and its index to the map
+    numIndices.set(num, i);
   }
-  
+
   // If no solution is found, return an empty array
   return [];
 }
@@ -373,11 +367,9 @@ const nums1 = [2, 7, 11, 15];
 const target1 = 9;
 // console.log(twoSum(nums1, target1));  // Output: [0, 1]
 
-
 // The 50-30-20 strategy is a simple way to budget, which involves spending 50% of after-tax income on needs, 30% after tax income on wants, and 20% after-tax income on savings or paying off debt.
 
 // Given the after-tax income as ati, what you are supposed to do is to make a function that will return an object that shows how much a person needs to spend on needs, wants, and savings.
-
 
 // function fiftyThirtyTwenty(ati){
 //   let strategy = {};
@@ -391,16 +383,15 @@ const target1 = 9;
 // console.log(fiftyThirtyTwenty(50000) , { "Needs": 25000, "Wants": 15000, "Savings": 10000 });
 // console.log(fiftyThirtyTwenty(13450) , { "Needs": 6725, "Wants": 4035, "Savings": 2690 });
 
-
 function fiftyThirtyTwenty(ati) {
   const needs = ati * 0.5;
   const wants = ati * 0.3;
   const savings = ati * 0.2;
 
   return {
-      "Needs": needs,
-      "Wants": wants,
-      "Savings": savings
+    Needs: needs,
+    Wants: wants,
+    Savings: savings,
   };
 }
 
@@ -412,13 +403,12 @@ function fiftyThirtyTwenty(ati) {
 
 // Examples
 
-function hasSameBread(arr1 , arr2){
-  if(arr1.length < 2 || arr2.length < 2){
-    return false; 
+function hasSameBread(arr1, arr2) {
+  if (arr1.length < 2 || arr2.length < 2) {
+    return false;
   }
-  
-    return arr1[0] === arr2[0] && arr1[arr1.length-1] === arr2[arr2.length-1];
 
+  return arr1[0] === arr2[0] && arr1[arr1.length - 1] === arr2[arr2.length - 1];
 }
 
 // console.log(hasSameBread(
@@ -439,10 +429,10 @@ function hasSameBread(arr1 , arr2){
 // Create a function which returns the number of true values there are in an array.
 
 // Examples
-function countTrue(arr){
+function countTrue(arr) {
   let count = 0;
-  for(let i = 0 ; i < arr.length ; i++){
-    if(arr[i] === true){
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === true) {
       count++;
     }
   }
@@ -477,19 +467,19 @@ function halfQuarterEighth(num) {
   return [half, quarter, eighth];
 }
 
-// console.log(halfQuarterEighth(6));  
-// console.log(halfQuarterEighth(22)); 
-// console.log(halfQuarterEighth(25)); 
+// console.log(halfQuarterEighth(6));
+// console.log(halfQuarterEighth(22));
+// console.log(halfQuarterEighth(25));
 
 // Given an array, rotate the values clockwise by one (the last value is sent to the first position).
 
 // Check the examples for a better understanding.
 
 // Examples
-function rotateByOne(arr){
-   let lastElemnt = arr.pop();
-   arr.unshift(lastElemnt);
-   return arr; 
+function rotateByOne(arr) {
+  let lastElemnt = arr.pop();
+  arr.unshift(lastElemnt);
+  return arr;
 }
 // console.log(rotateByOne([1, 2, 3, 4, 5]) , [5, 1, 2, 3, 4]);
 
@@ -511,9 +501,20 @@ function rotateByOne(arr){
 // 9	"nonagon"
 // 10	"decagon"
 // Examples
-function nSidedShape(n){
-  const shapes = ["circle", "semi-circle", "triangle", "square", "pentagon", "hexagon", "heptagon", "octagon", "nonagon", "decagon"];
-  return shapes[n-1];
+function nSidedShape(n) {
+  const shapes = [
+    "circle",
+    "semi-circle",
+    "triangle",
+    "square",
+    "pentagon",
+    "hexagon",
+    "heptagon",
+    "octagon",
+    "nonagon",
+    "decagon",
+  ];
+  return shapes[n - 1];
 }
 // console.log(nSidedShape(3) , "triangle");
 
@@ -528,11 +529,32 @@ function nSidedShape(n){
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
 
 // Examples
-function addition(n){
+function addition(n) {
   return n++;
 }
-console.log(addition(0) , 1);
+// console.log(addition(0) , 1);
 
-console.log(addition(9) , 10);
+// console.log(addition(9) , 10);
 
-console.log(addition(-3) , -2);
+// console.log(addition(-3) , -2);
+
+// try this convert a decimal number into binary then reverse it and then make reversed number to decimal.
+// Let's see how strong your JS fundamental is.
+
+function reversedBinaryInteger(num){
+  let binary = num.toString(2);
+  let reverseBinryt = binary.split('').reverse().join('')
+  let reverseDecimal = parseInt(reverseBinryt , 2)
+  return reverseDecimal;
+}
+console.log(reversedBinaryInteger(10), 5);
+// 10 = 1010 -> 0101 = 5
+
+console.log(reversedBinaryInteger(12), 3);
+// 12 = 1100 -> 0011 = 3
+
+console.log(reversedBinaryInteger(25), 19);
+// 25 = 11001 -> 10011 = 19
+
+console.log(reversedBinaryInteger(45), 45);
+// 45 = 101101 -> 101101 = 45
